@@ -1,0 +1,9 @@
+new WOW().init();
+Pace.on("done", function(){
+    $('#gallery').fadeIn();
+});
+
+$(function() {
+var lastId = $(".item").find(".originid").filter(":last").text();
+$('input[name="lastId"]').val(lastId);
+});

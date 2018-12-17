@@ -1,0 +1,15 @@
+<div class='content'>
+  <h1 class="logo"><a href="/tweets/search"><%= image_tag('twimgscan_logo.png',:alt => 'TwimgScan') %></a></h1>
+  <p class="description">Twitterに投稿された画像をボーっと眺めていたいアナタに・・・</p>
+
+  <div id="search-box">
+    <%= form_with model: @tweet, id: "search", method: :get, local: true do %>
+      <%= text_field_tag :tweet, nil,  id: "tweet_search", name: "keyword", placeholder: "キーワードを入力してください", style: "width: 300px;"%>
+      <%= submit_tag '検索' %>
+    <% end %>
+  </div>
+  
+  <div id='tweet_list'>
+     <%= render partial: 'tweet_list' %>
+  </div>
+</div>

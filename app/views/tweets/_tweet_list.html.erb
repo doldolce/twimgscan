@@ -1,0 +1,22 @@
+<% if @tweets.present? %>
+  <div id="gallery">
+    <% @tweets.each_with_index do |tweet, i| %>
+    <ul class="item wow zoomIn">
+      <a href="<%= tweet.media_url %>:large" data-lightbox="group" data-title="<a href='<%= tweet.url %>' target='_blank'><span class='text_popup'><%= tweet.full_text %></span><span class='rtfav'><span class='rt'><%= tweet.retweet_count %> RT</span>　<span class='fav'><%= tweet.favorite_count %> fav</span></span><span class='created_at'><%= tweet.created_at%></span><span class='names'>@<%= tweet.screen_name %>　<span class='acnm'><%= tweet.account_name %></span></span></a>">
+        <li class="accountName"><span class="twid">@<%= tweet.screen_name %></span><span class="twname">　<%= tweet.account_name %></span></li>
+        <li class="fullText"><%= tweet.full_text %></li>
+        <li class="originid"><%= tweet.id %></li>
+        <li class="twimg"><img src="<%= tweet.media_url %>:small" /></li>
+      </a>
+    </ul>
+    <% end %>
+    <div class="moreShow">
+      <%= form_with model: @tweet, id: "more", method: :post, local: true do %>
+        <input name='keyword' type='hidden' value='<%=@tweets[0].query%>'>
+        <input name='lastId' type='hidden' value=''>
+        <%= submit_tag 'もっと画像を見る' %>
+      <% end %>
+    </div>
+  </div>
+  
+<% end%>

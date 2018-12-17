@@ -1,0 +1,171 @@
+// Place all the styles related to the tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Patua+One');
+body{
+    background-color: #f6f6f6;
+    .content{
+        .logo{
+            text-align: center;
+            padding: 30px 0 0;
+        }
+        .description{
+            padding: 30px 0 0;
+            text-align:center;
+            font-size: 1.2em;
+            font-weight: bold;
+            font-family: "Rounded Mplus 1c";  
+        }
+        #search-box{
+            text-align: center;
+            margin: 0 0 60px 0;
+            input[type="submit"]{
+                margin: 0 0 0 15px;
+            }
+        }
+        #gallery{
+            display:none;
+            margin: 0 70px 0;
+            .item{
+                margin: 0 5px 5px 0;
+                padding-left: 5px;
+                list-style-type: none;
+                display: inline-flex;
+                
+                position: relative;
+                overflow: hidden;
+                font-family: "Century Gothic", sans-serif;
+                color: #fff;
+                text-align: center;
+                
+                .accountName{
+                    position: absolute;
+                    bottom: -10px;
+                    left: 0;
+                    z-index: 2;
+                    width: auto;
+                    height: auto;
+                    background: rgba(0, 0, 0, .6);
+                    -webkit-transition: .3s;
+                    transition: .3s;
+                    opacity: 0;
+                    .twid{
+                        color: #afeeee;
+                    }
+                    .twname{
+                        color: #87ceeb;
+                        font-weight: bold;
+                    }
+                }
+                
+                .fullText{
+                    position: absolute;
+                    top: -10px;
+                    left: 0;
+                    z-index: 2;
+                    width: auto;
+                    height: auto;
+                    background: rgba(0, 0, 0, .6);
+                    -webkit-transition: .3s;
+                    transition: .3s;
+                    opacity: 0;
+                    color: #e0ffff;
+                }
+                
+                .originid{
+                    display: none;
+                }
+                .twimg{
+                    text-align: center;
+                    img{
+                        width: auto;
+                        height: 300px;
+                        vertical-align:bottom;
+                    }
+                }
+            }
+            .item:hover{
+                .accountName{
+                    -webkit-transform: translateY(-10px);
+                    transform: translateY(-10px);
+                    opacity: 1;
+                }
+                .fullText{
+                    -webkit-transform: translateY(10px);
+                    transform: translateY(10px);
+                    opacity: 1;
+                }
+            }
+            .moreShow{
+                margin: 30px 0 30px;
+                input[type="submit"]{
+                    padding: 0.5em 1em;
+                    text-decoration: none;
+                    background: #668ad8;
+                    color: #FFF;
+                    border-bottom: solid 4px #627295;
+                    border-radius: 3px;   
+                    display: block;
+                    margin: 0 auto;
+                    height: 50px;
+                    width: 30%;
+                    letter-spacing: 10px;
+                }:hover{
+                    -ms-transform: translateY(1px);
+                    -webkit-transform: translateY(1px);
+                    transform: translateY(1px);
+                    border-bottom: none;
+                }:active{
+                    -ms-transform: translateY(2px);
+                    -webkit-transform: translateY(2px);
+                    transform: translateY(2px);
+                    border-bottom: none;
+                }
+                
+            }
+        }
+    }
+    #lightbox{
+        .lb-data{
+            .lb-details{
+                .lb-caption{
+                    a{
+                        text-decoration: none;
+                    }
+                    .text_popup{
+                        display: block;
+                        margin: 0 0 7px 0;
+                        font-size: 120%;
+                        color: #e0ffff;
+                        line-height: 1.1;
+                    }
+                    .rtfav{
+                        display: block;
+                        margin: 0 0 5px 0;
+                        font-size: 110%;
+                        .rt{
+                            color: #ffe418;
+                        }
+                        .fav{
+                            color: #ff4fa7;
+                        }
+                    }
+                    .created_at{
+                        display: block;
+                        color: #fff;
+                        margin: 0 0 13px 0;
+                    }
+                    .names{
+                        display: block;
+                        color: #afeeee;
+                        font-size: 110%;
+                        .acnm{
+                            color: #87ceeb;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
