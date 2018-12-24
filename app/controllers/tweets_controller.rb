@@ -4,6 +4,7 @@ class TweetsController < ApplicationController
           # キーセット
           config.consumer_key         = Rails.application.secrets.twitter_consumer_key
           config.consumer_secret      = Rails.application.secrets.twitter_consumer_secret
+        end
         @tweets = []
         since_id = nil
 
