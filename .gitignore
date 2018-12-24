@@ -32,4 +32,4 @@
 
 .DS_store
 database.yml
-secrets.yml
+.env

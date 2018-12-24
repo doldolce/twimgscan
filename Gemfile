@@ -65,3 +65,5 @@ gem 'twitter'
 # fastimage
 gem 'fastimage'
 
+# dotenv
+gem 'dotenv-rails'
