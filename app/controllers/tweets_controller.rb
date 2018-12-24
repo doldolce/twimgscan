@@ -2,9 +2,8 @@ class TweetsController < ApplicationController
     def search
         client = Twitter::REST::Client.new do |config|
           # キーセット
-          config.consumer_key         = "exampleconsumerkey" # コンシューマキー
-          config.consumer_secret      = "exampleconsumersecret" # コンシューマシークレット
-        end
+          config.consumer_key         = Rails.application.secrets.twitter_consumer_key
+          config.consumer_secret      = Rails.application.secrets.twitter_consumer_secret
         @tweets = []
         since_id = nil
 
