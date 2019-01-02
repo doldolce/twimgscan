@@ -3,6 +3,6 @@
 Twitterの画像を検索するだけのアプリです。
 ## どこで使える？  
 Herokuにデプロイされています。  
-→https://immense-headland-38445.herokuapp.com
+→[こちらから](https://immense-headland-38445.herokuapp.com){:target="_blank"}
 ## しょぼくない？  
 Railsで初めて作ったアプリなので勘弁してください。
