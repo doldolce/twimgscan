@@ -7,14 +7,15 @@ class TweetsController < ApplicationController
         end
         @tweets = []
         since_id = nil
-
         # 検索ワードが存在していたらツイートを取得
         if params[:keyword].present?
           if params[:lastId].blank?
             # リツイートを除く、検索ワードにひっかかった最新100件のツイートを取得する
             tweets = client.search(params[:keyword], count: 100, result_type: "recent", exclude: "retweets", since_id: since_id, include_entities: "true", filter:"images")
           else
-            tweets = client.search(params[:keyword], count: 100, result_type: "recent", exclude: "retweets", include_entities: "true", filter:"images", max_id: params[:lastId])
+            # もっと画像を見るボタン押下時、現在のツイートid未満が検索対象になる
+            next_page_id = params[:lastId].to_i - 1
+            tweets = client.search(params[:keyword], count: 100, result_type: "recent", exclude: "retweets", include_entities: "true", filter:"images", max_id: next_page_id)
           end
           # 取得したツイートをモデルに渡す
           tweets.take(100).each do |tw|
